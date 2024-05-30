@@ -14,7 +14,7 @@ const siteMetadata = {
   github: 'https://github.com/mrrootsec',
   x: 'https://x.com/_mohd_saqlain',
   // twitter: 'https://twitter.com/Twitter',
-  youtube: 'https://youtube.com/_mrrootsec',
+  youtube: 'https://www.youtube.com/channel/UC32gUUgUNdkWDCIHsWqrIIA',
   linkedin: 'https://www.linkedin.com/in/mohammad-saqlain',
   instagram: 'https://www.instagram.com/mrrootsec',
   locale: 'en-US',
