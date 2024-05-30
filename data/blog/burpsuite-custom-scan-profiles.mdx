@@ -1,0 +1,188 @@
+---
+title: Burpsuite Custom Scan Profiles
+date: '2023-11-27'
+tags: ['appsec', 'bug-bounty']
+draft: false
+layout: PostBanner
+images: ['/static/images/burpcustomscanprofile/1_bcsp_hero.webp']
+summary: Enhance Your Web Application Security Testing
+---
+
+# BurpSuite Custom Scan Profiles
+
+![Untitled](/static/images/burpcustomscanprofile/Untitled.png)
+
+# Introduction
+
+Hello, Fellow hackers..! Have you ever wondered if your web application security testing could be more than just routine checks? Well, Imagine a tool that not only does the job but does it your way. That's exactly what we're diving into today with Burp Suite's custom scan profiles. It's about transforming routine checks into a tailored, strategic approach Think of it as adding your unique masala (mix) to the recipe of security testing. It's not just about following steps. it's about adding your personal flair to uncover hidden vulnerabilities. Are you ready to unlock a new level of testing prowess?? Let's dive in and explore together!
+
+# Why Custom Scan Profiles?
+
+Have you ever used a one-size-fits-all solution and found it lacking? That's often the case with standard security testing methods. Enter the world of custom scan profiles in Burp Suite. But first, let's talk about what scan profiles are. In general, they are predefined sets of rules and parameters that guide how Burp Suite, conducts its scans. These profiles determine what to test and how effectively to do it.
+
+Now, why go custom? Imagine having the ability to custom these rules to fit the unique shape of your web application testing. Custom scan profiles allow you to focus exactly where it matters most. They enable you to increase careful examination on known weak spots, reduce noise from less relevant areas. These profiles allow us to focus on specific vulnerabilities and application behaviors, making our testing not just faster, but smarter. Isn't that awesome?****
+
+# Let’s create custom scan profiles
+
+Navigating through the customization of scan profiles in Burp Suite can seem complex, but it's a straightforward process once you know the steps. In this guide, I'll walk you through each phase, ensuring that you can confidently create your scan profiles. Whether you're an experienced security professional or new to the field, these guidelines will give you to optimize your testing strategy effectively.
+
+Before customizing scan profiles, let's first take a moment to explore the default ones available in Burp Suite. Navigate to **Burp > Configuration Library > Built-in**. 
+
+Here, you can review the Pre-Default profiles. It's a great way to understand how specific options define each profile and what they're designed to target. This initial review will give you a solid foundation for creating your own custom profiles.
+
+![Untitled](/static/images/burpcustomscanprofile/Untitled_1.png)
+
+## 1. Customizing the Crawler
+
+Crawling is essentially like creating a detailed map of a web application. It's a important step where you explore every part of the app to understand its structure and pinpoint potential security weak spots. And here's the cool part, In Burp Suite, you get to customize how this exploration is conducted with custom crawl profiles. Isn't that meowsome?
+
+When you dive into customizing your crawl profile, you will see with a variety of settings that you can tweak to make the crawl perfectly suited for your application. Think about how detailed you want your exploration to be. With crawl optimization strategies like 'Faster', 'Fastest', 'Normal', 'Complete', and others, you're in control of the balance between speed and depth. Pretty neat, right?
+
+Navigate to **Burp > Configuration Library > New > Crawling** to create the custom crawler
+
+![Untitled](/static/images/burpcustomscanprofile/Untitled_2.png)
+
+Setting limits on the crawl duration is another handy feature. It keeps your exploration focused and efficient. And if your app requires logging in, you can configure the crawler to handle login pages by either registering itself or managing login failures. This ensures that no part of your app is left unexplored – quite a smart move!
+
+![Untitled](/static/images/burpcustomscanprofile/Untitled_3.png)
+
+Now, let's talk about handling errors. You can decide how the crawler should react if it encounters issues like request timeouts. This is crucial for keeping your crawl stable and productive.
+
+![Untitled](/static/images/burpcustomscanprofile/Untitled_4.png)
+
+There's more! You can also customize how the crawler interacts with forms, set a specific user agent, and decide whether to follow or ignore the guidelines set by robots.txt and sitemap.xml files. And for those hidden gems in your app, like hidden links in JavaScript or API endpoints, the crawler can be set up to discover and follow these as well. For applications using GraphQL, the ability to check for GraphQL introspection is just the cherry on top.
+
+![Untitled](/static/images/burpcustomscanprofile/Untitled_5.png)
+
+## 2. Creating vulnerability-specific scan profiles
+
+When it comes to finding vulnerabilities, it's often best to look for specific one’s rather than doing a broad check. This is where creating special profiles for certain types of vulnerabilities can be really helpful. Think of it like having a special tool for each type of problem.
+
+You can set up custom scan profiles that are fine-tuned to detect specific vulnerabilities. This way, instead of doing a big, general scan that might miss some important details, you can direct the tool's powerful scanning capabilities precisely where they are needed most. Whether it's cross-site scripting, SQL injection,XXE,Open Redirection,Server-Side Request Forgery or any other specific vulnerabilities. It's like being a clever cat detective who knows just the right spots to sniff out clues.
+
+Let's break down some of the important configuration aspects that apply across various vulnerabilities:
+
+Navigate to **Burp > Configuration Library > New > Auditing** 
+
+Define your configuration name as you like..
+
+**Audit Optimization**: This setting lets you control how fast and accurately audits your application. You can choose between `Fast`, `Normal` & `Thorough` for speed, and adjust accuracy to `minimize false negatives` or `minimize false positives`. It's about finding the right balance for your specific testing needs.
+
+![Untitled](/static/images/burpcustomscanprofile/Untitled_6.png)
+
+**Issues Reported**: Here, you decide which security issues you should look for. You can pick specific categories like XSS or SQL Injection, Open Redirection, XXE, Path Traversal, GraphQL, JWT Checks, SSRF, Web cache poison, Client side Desync etc  and even specify the detection method, like looking for reflected, stored, or DOM-based XSS,  It's like choosing what kind of security issues you want the scanner to focus on.
+
+![Untitled](/static/images/burpcustomscanprofile/Untitled_7.png)
+
+**Handling Application Errors During Audit**: This will helps you manage how the scanner reacts if it encounters errors, like if it fails several times in a row or at certain points. It's about making sure the scanner keeps working smoothly even when it hits a few bumps.
+
+**Insertion Point Types**: This is where you tell the scanner where to try putting payloads like in URL parameters, body parameters, cookies, headers, and more. It's like directing the scanner to probe different parts of your application to find vulnerabilities.
+
+![Untitled](/static/images/burpcustomscanprofile/Untitled_8.png)
+
+**Modifying Location Parameters**: With this, you can move parameters around during the scan, like from the URL to the body of a request, or from cookies to the URL. It's a way to test how your application handles data in different places.sometimes it can be helpful to bypass firewalls.
+
+![Untitled](/static/images/burpcustomscanprofile/Untitled_9.png)
+
+**Ignored Insertion Points**: Here, you can tell scanner to skip certain parts of your application that you know are safe or not relevant. It's like telling the scanner not to waste time on areas you are already confident about.
+
+**Frequently Occurring Insertion Points**: This option lets you focus the scanner on areas where issues are most likely to happen, like in certain URL or body parameters. It's about concentrating the scan on the most likely trouble spots.
+
+![Untitled](/static/images/burpcustomscanprofile/Untitled_10.png)
+
+**JavaScript Analysis**: These settings control how scanner looks at JavaScript in your application, using either dynamic or static analysis. It's about choosing the best way for the scanner to understand and test the JavaScript parts of your app.
+
+### Let’s take a look on created vulnerability specific profiles:
+
+- Cross Site Scripting
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_11.png)
+    
+    Select the issues Cross-site Scripting related only
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_12.png)
+    
+    You can also define detection methods like below image,it will be vary on other vulnerabilities.
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_13.png)
+    
+    Determine where XSS is most likely to occur. By specifying these insertion points, you guide the scanner to focus on areas where XSS is most likely to be found.
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_14.png)
+    
+    Not all parts of an application are equally vulnerable to XSS. You can configure the scan to ignore certain insertion points that are less likely to be affected such as cookies to maintain the session and often occurs in places where user input is reflected or stored, like in search fields, comment sections, or user profiles etc.
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_15.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_16.png)
+    
+    You might need to adjust advanced settings like custom error messages, redirection behaviors, JavaScript Analysis or specific script contexts. This level of customization ensures that the scanner can effectively identify XSS in different scenarios.
+    
+- SQL Injection
+    
+    Based on the vulnerability, there will be slight different in configuration.
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_17.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_18.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_19.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_20.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_21.png)
+    
+- JWT Misconfiguration
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_22.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_23.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_24.png)
+    
+- GraphQL
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_25.png)
+    
+- Path Traversal
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_26.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_27.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_28.png)
+    
+- Injections
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_29.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_30.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_31.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_32.png)
+    
+- XML External Entity
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_33.png)
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_34.png)
+    
+- Web Cache Poison & Client-side desync
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_35.png)
+    
+- Server Side Request Forgery
+    
+    ![Untitled](/static/images/burpcustomscanprofile/Untitled_36.png)
+    
+
+You can create more as well..
+
+# **Wrapping It Up With a Purr**
+
+Creating and customizing your scan profiles in Burp Suite is a powerful approach to web application security testing. These tailored scans are incredibly useful for zeroing in on the most vulnerable parts of your application, helping to generate precise test cases that uncover hidden vulnerabilities. Remember, each application is unique, and so are its security needs. By customizing your scans, you're not just following best practices. you're setting a new standard in proactive security testing.
+
+I'd say, share your experience of hunting down bugs with these custom scans. How have they helped you catch the trickier ones? Your stories could be the cat's meow for others in the security community. Let's share our experiences and learn from each other. After all, in the big digital jungle, it's always better to be the clever cat than the unsuspecting mouse!
+
+And hey, don't forget to keep an eye out for my next blog post. There's always more to explore and learn in this ever-changing world of web security. if you spot any mistakes or have suggestions, please reach out to me. I'm always eager to learn and improve, just like a curious cat exploring new corners.
