@@ -7,7 +7,7 @@ const siteMetadata = {
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://mrroot.vercel.app',
-  siteRepo: 'https://github.com/mrrootsec/mrroot',
+  siteRepo: 'https://github.com/mrrootsec/mrrootsec',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/logo.png',
   email: 'mrrootsec@gmail.com',
@@ -61,7 +61,7 @@ const siteMetadata = {
       mapping: 'pathname', // supported options: pathname, url, title
       reactions: '1', // Emoji reactions: 1 = enable / 0 = disable
       // Send discussion metadata periodically to the parent window: 1 = enable / 0 = disable
-      metadata: '0',
+      metadata: '1',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
       theme: 'light',
