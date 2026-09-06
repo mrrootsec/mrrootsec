@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://mrrootsec.vercel.app/</loc></url>
+  <url><loc>https://mrrootsec.vercel.app/blog.html</loc></url>
+  <url><loc>https://mrrootsec.vercel.app/tools.html</loc></url>
+  <url><loc>https://mrrootsec.vercel.app/about.html</loc></url>
+  <url><loc>https://mrrootsec.vercel.app/post.html?slug=attacking-jwt</loc><lastmod>2025-10-21</lastmod></url>
+  <url><loc>https://mrrootsec.vercel.app/post.html?slug=hacking-graphql-101</loc><lastmod>2025-02-22</lastmod></url>
+  <url><loc>https://mrrootsec.vercel.app/post.html?slug=application-attack-surfaces</loc><lastmod>2024-05-25</lastmod></url>
+  <url><loc>https://mrrootsec.vercel.app/post.html?slug=http-headers</loc><lastmod>2024-01-20</lastmod></url>
+  <url><loc>https://mrrootsec.vercel.app/post.html?slug=javascript-analysis</loc><lastmod>2023-12-21</lastmod></url>
+  <url><loc>https://mrrootsec.vercel.app/post.html?slug=burpsuite-custom-scan-profiles</loc><lastmod>2023-11-27</lastmod></url>
+</urlset>
