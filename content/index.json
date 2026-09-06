@@ -1,0 +1,68 @@
+[
+  {
+    "slug": "attacking-jwt",
+    "title": "Attacking JWTs",
+    "date": "2025-10-21",
+    "description": "Understanding and exploiting common JWT vulnerabilities — algorithm confusion, secret brute-forcing, token tampering, and the none-algorithm attack.",
+    "tags": [
+      "appsec",
+      "bug-bounty",
+      "jwt"
+    ]
+  },
+  {
+    "slug": "hacking-graphql-101",
+    "title": "Hacking GraphQL 101",
+    "date": "2025-02-22",
+    "description": "Exploring & exploiting vulnerabilities in GraphQL APIs — a talk given at the NULL Hyderabad meetup.",
+    "tags": [
+      "appsec",
+      "bug-bounty",
+      "graphql"
+    ]
+  },
+  {
+    "slug": "application-attack-surfaces",
+    "title": "Uncovering Vulnerabilities: Exploring Application Attack Surfaces",
+    "date": "2024-05-25",
+    "description": "Practical techniques for reconnaissance, attack-surface analysis, and entry-point discovery — a talk given at the NULL Hyderabad meetup.",
+    "tags": [
+      "appsec",
+      "bug-bounty"
+    ]
+  },
+  {
+    "slug": "http-headers",
+    "title": "Wonders of HTTP Headers",
+    "date": "2024-01-20",
+    "description": "A tour of HTTP headers, common misconfigurations, and how they get exploited — a talk given at the NULL Hyderabad meetup.",
+    "tags": [
+      "appsec",
+      "bug-bounty",
+      "http"
+    ]
+  },
+  {
+    "slug": "javascript-analysis",
+    "title": "Resources for JavaScript Analysis",
+    "date": "2023-12-21",
+    "description": "A curated list of blogs, tools, and talks for analyzing client-side JavaScript during pentests and bug bounty hunting.",
+    "tags": [
+      "appsec",
+      "bug-bounty",
+      "javascript",
+      "resources"
+    ]
+  },
+  {
+    "slug": "burpsuite-custom-scan-profiles",
+    "title": "Burp Suite Custom Scan Profiles",
+    "date": "2023-11-27",
+    "description": "How to build tailored crawl and audit configurations in Burp Suite so scans focus on the vulnerabilities that matter most.",
+    "tags": [
+      "appsec",
+      "bug-bounty",
+      "burp-suite"
+    ]
+  }
+]
